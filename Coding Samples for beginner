@@ -1,0 +1,29 @@
+//Given a string input and a character, "countCharacter" returns the number of occurences of a given character in the given string.
+
+function countCharacter(str, char) {
+  var stringArray = str.split('')
+  var count = 0
+  for (var i = 0; i < stringArray.length; i++) {
+    if (stringArray[i] === char)  {
+    count++ 
+      }
+  }
+return count
+}
+var output = countCharacter('I am a hacker', 'a');
+console.log(output); // --> 3
+
+
+//Given an array, "getAllElementsButFirst" returns an array with all the elements but the first.
+
+function getAllElementsButFirst(array) {
+  // your code here
+  var answer = array.slice(1)
+  return answer
+  /* START SOLUTION */
+
+  /* END SOLUTION */
+}
+var input = [1, 2, 3, 4];
+var output = getAllElementsButFirst(input);
+console.log(output); // --> [2, 3, 4]
