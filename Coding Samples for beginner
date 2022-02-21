@@ -263,3 +263,43 @@ function countAllCharacters(str) {
 var output = countAllCharacters('banana');
 console.log(output); // --> {b: 1, a: 3, n: 2}
   //for (var i = 0; i < split.length; i ++) {
+
+
+Given an object and a key, "getFirstElementOfProperty" returns the first element of the array located at the given key.
+function getFirstElementOfProperty(obj, key) {
+  var i = 0
+  if (Array.isArray(obj[key]) === false ) { // if its not an array return undefined
+    return undefined
+  } else {
+  return obj[key][i]
+  
+  }
+  
+}
+var obj = {
+  key: [1, 2, 4]
+};
+
+var output = getFirstElementOfProperty(obj, 'key');
+console.log(output); // --> 1
+
+
+Given an object and a key, "getNthElementOfProperty" returns the nth element of an array located at the given key.
+
+function getNthElementOfProperty(obj, key, n) {
+  
+  
+  if (Array.isArray(obj[key]) === false) {
+    return undefined 
+  } else if (obj[key][0] === undefined) {
+    return undefined
+    } else {
+    return obj[key][n]
+    }
+  }
+
+var obj = {
+  key: [1, 2, 6]
+};
+var output = getNthElementOfProperty(obj, 'key', 1);
+console.log(output); // --> 2
