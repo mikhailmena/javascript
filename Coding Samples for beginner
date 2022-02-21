@@ -242,3 +242,24 @@ var obj = {
 };
 var output = getElementsLessThan100AtProperty(obj, 'key');
 console.log(output); // --> [20, 50]
+
+Given a string, "countAllCharacters" returns an object where each key is a character in the given string. The value of each key should be how many times each character appeared in the given string.
+function countAllCharacters(str) {
+  
+  //each key is a character in the string
+  //each value is # times char in string
+  var obj = {} //create obj
+  if (str === "") { //if string is a string
+    return obj //return the object
+  }
+  for (var i = 0; i < str.length; i++) { //iterate over length of string
+    if (typeof obj[str[i]] === 'undefined') { //if element in the object is undefined (or doesn't match any of element)
+      obj[str[i]] = 1 // make the first key of the object the first element in the string 
+    } else obj[str[i]] += 1 } // otherwise, add the number of times that element is not undefined as the value of the key of the object
+  return obj
+  
+}
+
+var output = countAllCharacters('banana');
+console.log(output); // --> {b: 1, a: 3, n: 2}
+  //for (var i = 0; i < split.length; i ++) {
