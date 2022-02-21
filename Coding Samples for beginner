@@ -220,3 +220,25 @@ var obj = {
 };
 var output = select(arr, obj);
 console.log(output); // --> { a: 1, c: 3 }
+
+
+Write a function called "getElementsThatEqual10AtProperty".
+
+Given an object and a key, "getElementsThatEqual10AtProperty" returns an array containing all the elements of the array located at the given key that are equal to ten.
+
+function getElementsLessThan100AtProperty(obj, key) {
+  var newArray = []
+    for (key in obj) {
+      for (var i = 0; i < obj[key].length; i++) {
+        if (obj[key][i] < 100) {
+          newArray.push(obj[key][i])
+        }
+      }
+    }
+  return newArray
+}
+var obj = {
+  key: [1000, 20, 50, 500]
+};
+var output = getElementsLessThan100AtProperty(obj, 'key');
+console.log(output); // --> [20, 50]
